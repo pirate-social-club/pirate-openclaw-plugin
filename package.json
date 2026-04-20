@@ -6,11 +6,11 @@
   "license": "AGPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/piratedotfun/openclaw-pirate-connector.git"
+    "url": "git+https://github.com/pirate-social-club/openclaw-pirate-connector.git"
   },
-  "homepage": "https://github.com/piratedotfun/openclaw-pirate-connector#readme",
+  "homepage": "https://github.com/pirate-social-club/openclaw-pirate-connector#readme",
   "bugs": {
-    "url": "https://github.com/piratedotfun/openclaw-pirate-connector/issues"
+    "url": "https://github.com/pirate-social-club/openclaw-pirate-connector/issues"
   },
   "keywords": [
     "openclaw",
