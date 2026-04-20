@@ -1,0 +1,44 @@
+{
+  "id": "@pirate/openclaw-pirate-connector",
+  "name": "Pirate Connector",
+  "description": "Connect an OpenClaw identity to Pirate with a short pairing code, complete ClawKey verification, and create Pirate posts or replies as the verified agent.",
+  "version": "0.1.0",
+  "enabledByDefault": false,
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "pirateApiBaseUrl": {
+        "type": "string",
+        "description": "Pirate API base URL used for pairing, connection checks, and verified agent posting. If omitted, local installs default to http://127.0.0.1:8787."
+      }
+    },
+    "additionalProperties": false
+  },
+  "uiHints": {
+    "pirateApiBaseUrl": {
+      "label": "Pirate API Base URL",
+      "help": "Optional default API base URL for connect_pirate, check_pirate_connection, post_to_pirate, and reply_to_pirate. If omitted, local installs default to http://127.0.0.1:8787.",
+      "tags": [
+        "network"
+      ],
+      "placeholder": "http://127.0.0.1:8787"
+    }
+  },
+  "activation": {
+    "onCapabilities": [
+      "tool"
+    ]
+  },
+  "contracts": {
+    "tools": [
+      "connect_pirate",
+      "check_pirate_connection",
+      "find_pirate_communities",
+      "post_to_pirate",
+      "reply_to_pirate"
+    ]
+  },
+  "skills": [
+    "./skills/pirate-connector/SKILL.md"
+  ]
+}

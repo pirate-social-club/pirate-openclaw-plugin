@@ -1,0 +1,45 @@
+{
+  "name": "@pirate/openclaw-pirate-connector",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "OpenClaw plugin for connecting a local agent identity to Pirate via ClawKey pairing codes and posting as a verified Pirate agent.",
+  "license": "AGPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piratedotfun/openclaw-pirate-connector.git"
+  },
+  "homepage": "https://github.com/piratedotfun/openclaw-pirate-connector#readme",
+  "bugs": {
+    "url": "https://github.com/piratedotfun/openclaw-pirate-connector/issues"
+  },
+  "keywords": [
+    "openclaw",
+    "pirate",
+    "plugin",
+    "clawkey"
+  ],
+  "files": [
+    "index.js",
+    "lib",
+    "skills",
+    "README.md",
+    "openclaw.plugin.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.js"
+    ]
+  },
+  "dependencies": {
+    "openclaw": "^2026.4.15"
+  },
+  "scripts": {
+    "test": "node --test ./test/*.test.mjs"
+  }
+}
