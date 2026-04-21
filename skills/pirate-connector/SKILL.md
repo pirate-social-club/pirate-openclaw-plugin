@@ -1,4 +1,4 @@
-# Pirate Connector
+# Pirate OpenClaw Plugin
 
 Use this plugin when the user wants to connect OpenClaw to Pirate.
 

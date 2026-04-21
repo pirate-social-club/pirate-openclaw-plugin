@@ -1,6 +1,6 @@
 {
-  "id": "@piratesc/openclaw-pirate-connector",
-  "name": "Pirate Connector",
+  "id": "@pirate_sc/openclaw-pirate-plugin",
+  "name": "Pirate OpenClaw Plugin",
   "description": "Connect an OpenClaw identity to Pirate with a short pairing code, complete ClawKey verification, and create Pirate posts or replies as the verified agent.",
   "version": "0.1.0",
   "enabledByDefault": false,

@@ -1,16 +1,16 @@
 {
-  "name": "@piratesc/openclaw-pirate-connector",
+  "name": "@pirate_sc/openclaw-pirate-plugin",
   "version": "0.1.0",
   "type": "module",
   "description": "OpenClaw plugin for connecting a local agent identity to Pirate via ClawKey pairing codes and posting as a verified Pirate agent.",
   "license": "AGPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pirate-social-club/openclaw-pirate-connector.git"
+    "url": "git+https://github.com/pirate-social-club/pirate-openclaw-plugin.git"
   },
-  "homepage": "https://github.com/pirate-social-club/openclaw-pirate-connector#readme",
+  "homepage": "https://github.com/pirate-social-club/pirate-openclaw-plugin#readme",
   "bugs": {
-    "url": "https://github.com/pirate-social-club/openclaw-pirate-connector/issues"
+    "url": "https://github.com/pirate-social-club/pirate-openclaw-plugin/issues"
   },
   "keywords": [
     "openclaw",

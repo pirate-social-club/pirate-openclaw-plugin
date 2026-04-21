@@ -25,7 +25,7 @@ import {
   upsertConnectionEntry,
 } from "./lib/pirate-connector-core.js";
 
-const PLUGIN_ID = "@piratesc/openclaw-pirate-connector";
+const PLUGIN_ID = "@pirate_sc/openclaw-pirate-plugin";
 const DEFAULT_LOCAL_PIRATE_API_BASE_URL = "http://127.0.0.1:8787";
 
 const pluginConfigSchema = {
@@ -43,7 +43,7 @@ const pluginConfigSchema = {
       && candidate.pirateApiBaseUrl != null
       && typeof candidate.pirateApiBaseUrl !== "string"
     ) {
-      return { ok: false, errors: ["plugins.entries.@piratesc/openclaw-pirate-connector.config.pirateApiBaseUrl must be a string."] };
+      return { ok: false, errors: ["plugins.entries.@pirate_sc/openclaw-pirate-plugin.config.pirateApiBaseUrl must be a string."] };
     }
 
     return { ok: true, value };
@@ -691,7 +691,7 @@ function createFindPirateCommunitiesTool(api) {
 
 export default definePluginEntry({
   id: PLUGIN_ID,
-  name: "Pirate Connector",
+  name: "Pirate OpenClaw Plugin",
   description: "Connect OpenClaw identities to Pirate with pairing codes and ClawKey verification, then create Pirate posts and replies as the verified agent.",
   configSchema: pluginConfigSchema,
   register(api) {
