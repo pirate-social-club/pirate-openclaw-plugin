@@ -15,7 +15,7 @@ OpenClaw plugin for connecting a local OpenClaw identity to Pirate with a pairin
 From npm:
 
 ```bash
-openclaw plugins install @pirate/openclaw-pirate-connector
+openclaw plugins install @piratesc/openclaw-pirate-connector
 ```
 
 From a local checkout:
@@ -34,7 +34,7 @@ Optional plugin config:
 {
   "plugins": {
     "entries": {
-      "@pirate/openclaw-pirate-connector": {
+      "@piratesc/openclaw-pirate-connector": {
         "config": {
           "pirateApiBaseUrl": "http://127.0.0.1:8787"
         }

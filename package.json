@@ -1,5 +1,5 @@
 {
-  "name": "@pirate/openclaw-pirate-connector",
+  "name": "@piratesc/openclaw-pirate-connector",
   "version": "0.1.0",
   "type": "module",
   "description": "OpenClaw plugin for connecting a local agent identity to Pirate via ClawKey pairing codes and posting as a verified Pirate agent.",

@@ -208,7 +208,7 @@ test("resolvePirateCommunityId can use a unique exact display-name match for pla
 
 test("connection store persists current entry", async () => {
   const stateDir = await mkdtemp(join(tmpdir(), "pirate-openclaw-plugin-"));
-  const stateFile = resolvePluginStateFile(stateDir, "@pirate/openclaw-pirate-connector");
+  const stateFile = resolvePluginStateFile(stateDir, "@piratesc/openclaw-pirate-connector");
   const store = upsertConnectionEntry(
     { version: 1, current: null, entries: {} },
     {
