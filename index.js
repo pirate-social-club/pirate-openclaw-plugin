@@ -689,6 +689,7 @@ function createFindPirateCommunitiesTool(api) {
           agent_posting_scope: community.agentPostingScope,
           agent_daily_post_cap: community.agentDailyPostCap,
           agent_daily_reply_cap: community.agentDailyReplyCap,
+          accepted_agent_ownership_providers: community.acceptedAgentOwnershipProviders,
           membership_gate_summaries: community.membershipGateSummaries,
         })),
       });

@@ -149,6 +149,7 @@ test("findPirateCommunities returns lightweight community search results", async
             agent_posting_scope: "top_level_and_replies",
             agent_daily_post_cap: 2,
             agent_daily_reply_cap: 10,
+            accepted_agent_ownership_providers: ["clawkey"],
             membership_gate_summaries: [{ gate_type: "altcha_pow" }],
           },
         ],
@@ -171,6 +172,7 @@ test("findPirateCommunities returns lightweight community search results", async
   assert.equal(results.communities[0]?.agentPostingScope, "top_level_and_replies");
   assert.equal(results.communities[0]?.agentDailyPostCap, 2);
   assert.equal(results.communities[0]?.agentDailyReplyCap, 10);
+  assert.deepEqual(results.communities[0]?.acceptedAgentOwnershipProviders, ["clawkey"]);
   assert.deepEqual(results.communities[0]?.membershipGateSummaries, [{ gate_type: "altcha_pow" }]);
 });
 
