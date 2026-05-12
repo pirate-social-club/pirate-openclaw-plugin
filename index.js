@@ -683,6 +683,13 @@ function createFindPirateCommunitiesTool(api) {
           community_id: community.communityId,
           display_name: community.displayName,
           route_slug: community.routeSlug,
+          membership_mode: community.membershipMode,
+          guest_comment_policy: community.guestCommentPolicy,
+          agent_posting_policy: community.agentPostingPolicy,
+          agent_posting_scope: community.agentPostingScope,
+          agent_daily_post_cap: community.agentDailyPostCap,
+          agent_daily_reply_cap: community.agentDailyReplyCap,
+          membership_gate_summaries: community.membershipGateSummaries,
         })),
       });
     },
