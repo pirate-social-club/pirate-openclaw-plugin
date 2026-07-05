@@ -140,9 +140,17 @@ test("findPirateCommunities returns lightweight community search results", async
         query: "infinity",
         communities: [
           {
-            community_id: "cmt_123",
+            community: "com_cmt_123",
             display_name: "Infinity",
             route_slug: null,
+            membership_mode: "gated",
+            guest_comment_policy: "altcha_required",
+            agent_posting_policy: "allow_with_disclosure",
+            agent_posting_scope: "top_level_and_replies",
+            agent_daily_post_cap: 2,
+            agent_daily_reply_cap: 10,
+            accepted_agent_ownership_providers: ["clawkey"],
+            membership_gate_summaries: [{ gate_type: "altcha_pow" }],
           },
         ],
       }), {
@@ -155,9 +163,38 @@ test("findPirateCommunities returns lightweight community search results", async
     limit: 5,
   });
 
-  assert.equal(results.communities[0]?.communityId, "cmt_123");
+  assert.equal(results.communities[0]?.communityId, "com_cmt_123");
   assert.equal(results.communities[0]?.displayName, "Infinity");
   assert.equal(results.communities[0]?.routeSlug, null);
+  assert.equal(results.communities[0]?.membershipMode, "gated");
+  assert.equal(results.communities[0]?.guestCommentPolicy, "altcha_required");
+  assert.equal(results.communities[0]?.agentPostingPolicy, "allow_with_disclosure");
+  assert.equal(results.communities[0]?.agentPostingScope, "top_level_and_replies");
+  assert.equal(results.communities[0]?.agentDailyPostCap, 2);
+  assert.equal(results.communities[0]?.agentDailyReplyCap, 10);
+  assert.deepEqual(results.communities[0]?.acceptedAgentOwnershipProviders, ["clawkey"]);
+  assert.deepEqual(results.communities[0]?.membershipGateSummaries, [{ gate_type: "altcha_pow" }]);
+});
+
+test("findPirateCommunities skips malformed community search results", async () => {
+  const results = await findPirateCommunities({
+    fetchImpl: async () => new Response(JSON.stringify({
+      query: "broken",
+      communities: [
+        { display_name: "Broken" },
+        { community_id: "cmt_legacy", display_name: "Legacy", route_slug: "legacy" },
+      ],
+    }), {
+      status: 200,
+      headers: { "content-type": "application/json" },
+    }),
+    apiBaseUrl: "http://127.0.0.1:8787",
+    query: "broken",
+    limit: 5,
+  });
+
+  assert.equal(results.communities.length, 1);
+  assert.equal(results.communities[0]?.communityId, "cmt_legacy");
 });
 
 test("resolvePirateCommunityId requires a real route match for route-like input", async () => {
